@@ -2,7 +2,7 @@ import React from "react";
 import { ContactCard } from "./ContactCard";
 
 const ContactList = (props) => {
-    const renderingList = props.contact.map((contacts) => {
+    const renderingList = props.contacts.map((contacts) => {
         return (
             <ContactCard contact={ contacts} />
         );

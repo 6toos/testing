@@ -6,25 +6,30 @@ import AddContact from "./AddContact";
 import './App.css';
 
 function App(prop) {
-  const [contact, setContacts] = useState([])
-  const contacts = [
-    {
-      id: "1",
-      name: "Sixtus",
-      email: "chukofsi@gmail.com"
-    },
-    {
-      id: "2",
-      name: "Bartholomew",
-      email: "sixtusbartholomew@yahoo.com"
-    }
-  ]
+  const [contacts, setContacts] = useState([])
+
+  const addContactHandler = (contact) => {
+    console.log(contact);
+  }
+
+  // const contacts = [
+  //   {
+  //     id: "1",
+  //     name: "Sixtus",
+  //     email: "chukofsi@gmail.com"
+  //   },
+  //   {
+  //     id: "2",
+  //     name: "Bartholomew",
+  //     email: "sixtusbartholomew@yahoo.com"
+  //   }
+  // ]
   return (
     <div className="ui container">
       <h1>{prop.title}</h1>
       <Header />
-      <AddContact />
-      <ContactList contact={contacts} />
+      <AddContact addContactHandler={ addContactHandler} />
+      <ContactList contacts={contacts} />
       {/* <ContactCard/> */}
     </div>
   );
