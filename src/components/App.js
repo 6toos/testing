@@ -14,9 +14,13 @@ function App(prop) {
     //updating the state...
     setContacts([...contacts, contact]);
   };
+  
   useEffect(() => {
     const retrieveContact = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-  }, [contacts]);
+    if (retrieveContact) {
+      setContacts(retrieveContact);
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
