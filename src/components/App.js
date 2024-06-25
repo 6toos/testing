@@ -10,6 +10,7 @@ function App(prop) {
 
   const addContactHandler = (contact) => {
     console.log(contact);
+    setContacts(...contacts, contact);
   }
 
   // const contacts = [
